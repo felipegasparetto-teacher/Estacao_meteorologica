@@ -108,6 +108,7 @@ const firebaseConfig = {
 ```
 
 3. No mesmo arquivo `script.js`, atualize as constantes globais de geolocalização (`LAT` e `LNG`) com as coordenadas exatas da sua estação. Isso garantirá que o mapa renderize sua posição corretamente e que a API de previsão busque o clima exato da sua região.
+4. Faça o deploy do **index.html** , **script.js** e **style.css** no seu firebase. 
 
 #### Entendendo o Payload de Dados (O que o ESP32 envia)
 
