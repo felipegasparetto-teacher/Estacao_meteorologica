@@ -93,7 +93,8 @@ Agora precisamos configurar o arquivo javascript responsável pelo frontend para
      appId: "SEU_APP_ID"
    };
 
-   ### Passo 4: Executar e Exibir o Dashboard
+
+### Passo 4: Executar e Exibir o Dashboard
 
 O frontend deste projeto foi desenvolvido com uma arquitetura *Stateless Serverless*, ou seja, não precisa de um servidor local complexo ou interpretador de backend (Node.js, PHP, Python) para rodar, funcionando direto no navegador.
 
