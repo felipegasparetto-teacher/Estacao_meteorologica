@@ -1,5 +1,10 @@
 
 # 🌤️ Estação Meteorológica IoT & Dashboard Web
+![Status](https://img.shields.io/badge/Status-Ativo-success)
+![Hardware](https://img.shields.io/badge/Hardware-ESP32-blue)
+![Frontend](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JS-orange)
+![Database](https://img.shields.io/badge/Database-Firebase-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 Um projeto completo de código aberto (Hardware + Software) para construir sua própria **Estação Meteorológica Automática** com telemetria via Wi-Fi. O sistema coleta dados climáticos locais através de um microcontrolador ESP32 equipado com sensores atmosféricos, integra com a API *Open-Meteo* para previsões do tempo e envia tudo em tempo real para o Firebase.
 
