@@ -82,8 +82,23 @@ float latitudeForcada  = -23.550520;  // Exemplo: São Paulo (Modifique para sua
 float longitudeForcada = -46.633308;
 
 ```
+**Com o código pronto e salvo, siga o rito final de gravação:**
 
-4. Conecte o ESP32 ao computador via cabo USB, selecione a porta COM correspondente e a sua placa (ex: DOIT ESP32 DEVKIT V1) e clique em Carregar. Abra o Monitor Serial (ajustado para 115200 baud) para verificar as mensagens de depuração de Wi-Fi e Firebase.
+4. Conecte o seu **ESP32** ao computador utilizando um cabo USB de boa qualidade (que possua vias de dados, não apenas de energia).
+5. Vá no menu **Ferramentas** $\rightarrow$ **Placa** $\rightarrow$ **ESP32 Arduino** e selecione o modelo exato da sua placa (o mais comum para projetos DIY é o `DOIT ESP32 DEVKIT V1`).
+6. Vá em **Ferramentas** $\rightarrow$ **Porta** e selecione a porta COM correspondente à sua placa (ex: `COM3`, `COM4`).
+7. Clique no botão **Carregar** (a seta apontando para a direita no canto superior esquerdo ou `Ctrl + U`).
+
+> 💡 **Dica de Gravação:** Caso a IDE exiba a mensagem `Connecting.......___......` e dê erro de timeout, mantenha pressionado o botão **BOOT** (ou **IO0**) da sua placa ESP32 assim que o processo de escrita começar, soltando-o apenas quando a barra de porcentagem começar a subir.
+
+8. Validar o Funcionamento
+
+Assim que a IDE exibir a mensagem **"Carregamento concluído"** (*Done uploading*):
+
+* Abra o **Monitor Serial** (`Ctrl + Shift + M`).
+* Ajuste a velocidade para **115200 baud** (no canto inferior direito do monitor).
+* Pressione o botão **EN** (ou **RST**) do seu ESP32 para reiniciar a placa.
+* Acompanhe o log na tela para confirmar que ela se conectou com sucesso ao Wi-Fi e está enviando os pacotes para o Firebase.
 
 ### Passo 3: Configurar o Dashboard Web e a Estrutura de Dados (script.js)
 
@@ -131,7 +146,6 @@ A estrutura exata do JSON que o ESP32 monta e que o painel Web obrigatoriamente 
 
 > 💡 **Dica de Arquitetura:** Se você decidir customizar ou adicionar novos sensores físicos no arquivo `estacao_meteorologica.ino`, lembre-se de manter o padrão de utilizar chaves curtas (ex: criar um "press" ao invés de "pressao_atmosferica_absoluta") no JSON para não sobrecarregar o tráfego MQTT/HTTP com strings muito longas a cada 10 segundos.
 
-🚀Passo a Passo: Configuração e Upload (ESP32)1. Preparar a Arduino IDESe você ainda não tem a Arduino IDE configurada para o ESP32, siga estes subpassos rápidos:Abra a Arduino IDE.Vá em Arquivo $\rightarrow$ Preferências (ou Ctrl + ,).No campo URLs Adicionais para o Gerenciador de Placas, cole o seguinte link:https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.jsonClique em OK.Vá em Ferramentas $\rightarrow$ Placa $\rightarrow$ Gerenciador de Placas...Digite ESP32 na barra de pesquisa e clique em Instalar na versão da Espressif Systems.2. Instalar as Bibliotecas NecessáriasPara que o código da estação meteorológica compile sem erros, você precisa das dependências do projeto:Abra o Gerenciador de Bibliotecas (Ctrl + Shift + I ou vá em Ferramentas $\rightarrow$ Gerenciar Bibliotecas...).Busque e instale exatamente estas três bibliotecas:DHT sensor library (por Adafruit) — Nota: Se a IDE pedir para instalar também a "Adafruit Unified Sensor", confirme e instale tudo.ArduinoJson (por Benoit Blanchon) — Recomendado utilizar a versão estável mais recente (v6 ou v7).Firebase ESP32 Client (por Mobizt) — Certifique-se de que é a versão 4.x ou superior.
 
 ### Passo 4: Executar e Exibir o Dashboard
 
