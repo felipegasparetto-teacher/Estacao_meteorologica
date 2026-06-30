@@ -163,4 +163,4 @@ Sinta-se à vontade para realizar um *Fork* do projeto, criar *branches* com nov
 
 ---
 
-Desenvolvido para amantes do IoT e da Engenharia Meteorológica ⛈️🚀
+Desenvolvido para entusiastas de IoT  ⛈️🚀
