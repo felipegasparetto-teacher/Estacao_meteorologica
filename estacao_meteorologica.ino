@@ -208,6 +208,16 @@ void setup() {
 /* ==================== LOOP PRINCIPAL ==================== */
 void loop() {
   unsigned long agora = millis();
+
+    // ---------- 0. Verificação de Virada de Dia (Zerar Pluviômetro) ----------
+  struct tm timeinfo;
+  if (getLocalTime(&timeinfo)) {
+    if (ultimoDia != -1 && ultimoDia != timeinfo.tm_mday) {
+      REEDCOUNT = 0; 
+      Serial.println("\n*** MEIA-NOITE! Pluviômetro zerado para o novo dia. ***\n");
+    }
+    ultimoDia = timeinfo.tm_mday; 
+  }
   
   // ---------- 1. Atualização da API Open-Meteo (A cada 15 min) ----------
   static unsigned long ultimaLeituraMeteo = 0;
